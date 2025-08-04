@@ -1,0 +1,349 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: #010A10;
+    color: #E6E6E6;
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* Container Layout */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    display: grid;
+    grid-template-columns: 1fr 200px;
+    gap: 60px;
+    min-height: 100vh;
+}
+
+/* Main Content Styles */
+.main-content {
+    max-width: 800px;
+}
+
+/* Header Styles */
+.blog-header {
+    margin-bottom: 40px;
+}
+
+.metadata {
+    font-size: 14px;
+    color: #8892B0;
+    margin-bottom: 16px;
+    font-weight: 400;
+}
+
+.category {
+    color: #8892B0;
+}
+
+.read-time {
+    color: #8892B0;
+}
+
+.blog-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    background: linear-gradient(to right, #FFFFFF 0%, #C9E8FF 50%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1.2;
+    margin-bottom: 16px;
+    letter-spacing: -0.02em;
+}
+
+.author {
+    font-size: 1.1rem;
+    color: #64FFDA;
+    font-weight: 500;
+    margin-bottom: 0;
+}
+
+/* Blog Content Styles */
+.blog-content {
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+
+.intro {
+    margin-bottom: 32px;
+    color: #E6E6E6;
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+
+.section-title {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #FFFFFF;
+    margin: 40px 0 20px 0;
+    line-height: 1.3;
+}
+
+.section-text {
+    margin-bottom: 32px;
+    color: #E6E6E6;
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+
+/* Tips Section */
+.tips-section {
+    margin-top: 40px;
+}
+
+.tip-item {
+    margin-bottom: 32px;
+}
+
+.tip-number {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #FFFFFF;
+    margin-bottom: 16px;
+    line-height: 1.3;
+}
+
+.tip-text {
+    color: #E6E6E6;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 0;
+}
+
+/* Benefits List */
+.benefits-list {
+    margin: 24px 0 32px 0;
+}
+
+.benefits {
+    list-style: none;
+    padding: 0;
+}
+
+.benefits li {
+    color: #E6E6E6;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 12px;
+    padding-left: 24px;
+    position: relative;
+}
+
+.benefits li::before {
+    content: "✓";
+    color: #64FFDA;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+/* Code Blocks */
+.code-block {
+    background-color: rgba(100, 255, 218, 0.1);
+    border: 1px solid rgba(100, 255, 218, 0.2);
+    border-radius: 8px;
+    padding: 16px;
+    margin: 16px 0;
+    overflow-x: auto;
+}
+
+.code-block code {
+    color: #64FFDA;
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.code-block pre {
+    margin: 0;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+.code-block pre code {
+    color: #E6E6E6;
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: sticky;
+    top: 40px;
+    height: fit-content;
+}
+
+/* Profile Section */
+.profile-section {
+    margin-bottom: 32px;
+}
+
+.profile-picture {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid #64FFDA;
+    box-shadow: 0 8px 32px rgba(100, 255, 218, 0.2);
+}
+
+.profile-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Social Icons */
+.social-icons {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+.social-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(100, 255, 218, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #64FFDA;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(100, 255, 218, 0.2);
+    position: relative;
+}
+
+.social-icon:hover {
+    background-color: rgba(100, 255, 218, 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(100, 255, 218, 0.3);
+}
+
+.social-icon i {
+    font-size: 18px;
+}
+
+/* Flutter Icon Special Styling */
+.flutter-icon {
+    background: linear-gradient(135deg, #64FFDA, #00B4D8);
+    color: #0A192F;
+    border: none;
+}
+
+.flutter-icon:hover {
+    background: linear-gradient(135deg, #00B4D8, #64FFDA);
+    transform: translateY(-2px) rotate(5deg);
+}
+
+/* LinkedIn Icon with Text */
+.linkedin-icon {
+    width: auto;
+    padding: 0 12px;
+    border-radius: 20px;
+    gap: 4px;
+}
+
+.linkedin-text {
+    font-size: 14px;
+    font-weight: 600;
+    color: #64FFDA;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .sidebar {
+        position: static;
+        flex-direction: row;
+        justify-content: center;
+        gap: 40px;
+    }
+    
+    .social-icons {
+        flex-direction: row;
+        gap: 16px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px 16px;
+    }
+    
+    .blog-title {
+        font-size: 2rem;
+    }
+    
+    .section-title {
+        font-size: 1.5rem;
+    }
+    
+    .blog-content {
+        font-size: 1rem;
+    }
+    
+    .sidebar {
+        flex-direction: column;
+        gap: 24px;
+    }
+    
+    .social-icons {
+        flex-direction: row;
+        gap: 12px;
+    }
+    
+    .social-icon {
+        width: 36px;
+        height: 36px;
+    }
+    
+    .social-icon i {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .blog-title {
+        font-size: 1.8rem;
+    }
+    
+    .profile-picture {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .social-icons {
+        gap: 8px;
+    }
+    
+    .social-icon {
+        width: 32px;
+        height: 32px;
+    }
+    
+    .social-icon i {
+        font-size: 14px;
+    }
+} 
