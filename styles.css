@@ -262,18 +262,17 @@ body {
     transform: translateY(-2px) rotate(5deg);
 }
 
-/* LinkedIn Icon with Text */
+/* LinkedIn Icon - keeping it circular like others */
 .linkedin-icon {
-    width: auto;
-    padding: 0 12px;
-    border-radius: 20px;
-    gap: 4px;
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    padding: 0;
+    gap: 0;
 }
 
 .linkedin-text {
-    font-size: 14px;
-    font-weight: 600;
-    color: #64FFDA;
+    display: none;
 }
 
 /* Enhanced Responsive Design */
@@ -351,6 +350,13 @@ body {
         min-height: 70px;
     }
     
+    .linkedin-icon {
+        width: 70px;
+        height: 70px;
+        min-width: 70px;
+        min-height: 70px;
+    }
+    
     .social-icon i {
         font-size: 28px;
     }
@@ -421,6 +427,13 @@ body {
         min-height: 60px;
     }
     
+    .linkedin-icon {
+        width: 60px;
+        height: 60px;
+        min-width: 60px;
+        min-height: 60px;
+    }
+    
     .social-icon i {
         font-size: 24px;
     }
@@ -477,6 +490,13 @@ body {
     }
     
     .social-icon {
+        width: 55px;
+        height: 55px;
+        min-width: 55px;
+        min-height: 55px;
+    }
+    
+    .linkedin-icon {
         width: 55px;
         height: 55px;
         min-width: 55px;
