@@ -11,6 +11,8 @@ body {
     color: #E6E6E6;
     line-height: 1.6;
     min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 /* Container Layout */
@@ -156,6 +158,7 @@ body {
     padding: 16px;
     margin: 16px 0;
     overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
 }
 
 .code-block code {
@@ -217,8 +220,8 @@ body {
 }
 
 .social-icon {
-    width: 40px;
-    height: 40px;
+    width: 65px;
+    height: 65px;
     border-radius: 50%;
     background-color: rgba(100, 255, 218, 0.1);
     display: flex;
@@ -229,6 +232,7 @@ body {
     transition: all 0.3s ease;
     border: 1px solid rgba(100, 255, 218, 0.2);
     position: relative;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .social-icon:hover {
@@ -237,8 +241,13 @@ body {
     box-shadow: 0 4px 12px rgba(100, 255, 218, 0.3);
 }
 
+.social-icon:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgba(100, 255, 218, 0.2);
+}
+
 .social-icon i {
-    font-size: 18px;
+    font-size: 28px;
 }
 
 /* Flutter Icon Special Styling */
@@ -267,11 +276,19 @@ body {
     color: #64FFDA;
 }
 
-/* Responsive Design */
+/* Enhanced Responsive Design */
+@media (max-width: 1200px) {
+    .container {
+        max-width: 100%;
+        padding: 30px 20px;
+    }
+}
+
 @media (max-width: 1024px) {
     .container {
         grid-template-columns: 1fr;
         gap: 40px;
+        padding: 30px 20px;
     }
     
     .sidebar {
@@ -279,54 +296,63 @@ body {
         flex-direction: row;
         justify-content: center;
         gap: 40px;
+        margin-top: 20px;
     }
     
     .social-icons {
         flex-direction: row;
         gap: 16px;
     }
+    
+    .blog-title {
+        font-size: 2.2rem;
+    }
 }
 
 @media (max-width: 768px) {
     .container {
         padding: 20px 16px;
+        gap: 30px;
     }
     
     .blog-title {
-        font-size: 2rem;
+        font-size: 1.8rem;
+        line-height: 1.3;
     }
     
     .section-title {
         font-size: 1.5rem;
+        margin: 30px 0 16px 0;
     }
     
     .blog-content {
         font-size: 1rem;
     }
     
+    .intro, .section-text, .tip-text {
+        font-size: 1rem;
+    }
+    
     .sidebar {
         flex-direction: column;
         gap: 24px;
+        margin-top: 30px;
     }
     
     .social-icons {
         flex-direction: row;
-        gap: 12px;
+        gap: 16px;
     }
     
     .social-icon {
-        width: 36px;
-        height: 36px;
+        width: 70px;
+        height: 70px;
+        min-width: 70px;
+        min-height: 70px;
     }
     
     .social-icon i {
-        font-size: 16px;
-    }
-}
-
-@media (max-width: 480px) {
-    .blog-title {
-        font-size: 1.8rem;
+        font-size: 28px;
     }
     
     .profile-picture {
@@ -334,16 +360,175 @@ body {
         height: 100px;
     }
     
+    .code-block {
+        padding: 12px;
+        margin: 12px 0;
+    }
+    
+    .code-block pre code {
+        font-size: 0.85rem;
+    }
+    
+    .benefits li {
+        font-size: 1rem;
+        padding-left: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 16px 12px;
+        gap: 24px;
+    }
+    
+    .blog-title {
+        font-size: 1.6rem;
+        margin-bottom: 12px;
+    }
+    
+    .section-title {
+        font-size: 1.3rem;
+        margin: 24px 0 12px 0;
+    }
+    
+    .blog-content {
+        font-size: 0.95rem;
+    }
+    
+    .intro, .section-text, .tip-text {
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+    
+    .tip-number {
+        font-size: 1.2rem;
+        margin-bottom: 12px;
+    }
+    
+    .profile-picture {
+        width: 80px;
+        height: 80px;
+    }
+    
     .social-icons {
-        gap: 8px;
+        gap: 12px;
     }
     
     .social-icon {
-        width: 32px;
-        height: 32px;
+        width: 60px;
+        height: 60px;
+        min-width: 60px;
+        min-height: 60px;
     }
     
     .social-icon i {
-        font-size: 14px;
+        font-size: 24px;
+    }
+    
+    .code-block {
+        padding: 10px;
+        margin: 10px 0;
+    }
+    
+    .code-block pre code {
+        font-size: 0.8rem;
+    }
+    
+    .benefits li {
+        font-size: 0.95rem;
+        padding-left: 18px;
+        margin-bottom: 10px;
+    }
+    
+    .metadata {
+        font-size: 12px;
+        margin-bottom: 12px;
+    }
+    
+    .author {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 360px) {
+    .container {
+        padding: 12px 8px;
+    }
+    
+    .blog-title {
+        font-size: 1.4rem;
+    }
+    
+    .section-title {
+        font-size: 1.2rem;
+    }
+    
+    .blog-content {
+        font-size: 0.9rem;
+    }
+    
+    .intro, .section-text, .tip-text {
+        font-size: 0.9rem;
+    }
+    
+    .profile-picture {
+        width: 70px;
+        height: 70px;
+    }
+    
+    .social-icon {
+        width: 55px;
+        height: 55px;
+        min-width: 55px;
+        min-height: 55px;
+    }
+    
+    .social-icon i {
+        font-size: 22px;
+    }
+}
+
+/* Touch-friendly improvements */
+@media (hover: none) and (pointer: coarse) {
+    .social-icon {
+        min-width: 70px;
+        min-height: 70px;
+    }
+    
+    .social-icon:hover {
+        transform: none;
+    }
+    
+    .social-icon:active {
+        background-color: rgba(100, 255, 218, 0.2);
+        transform: scale(0.95);
+    }
+}
+
+/* Landscape orientation for mobile */
+@media (max-width: 768px) and (orientation: landscape) {
+    .container {
+        padding: 16px 20px;
+    }
+    
+    .sidebar {
+        flex-direction: row;
+        gap: 20px;
+    }
+    
+    .profile-picture {
+        width: 60px;
+        height: 60px;
+    }
+}
+
+/* High DPI displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .profile-picture {
+        border-width: 2px;
+    }
+    
+    .social-icon {
+        border-width: 1px;
     }
 } 
