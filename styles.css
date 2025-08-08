@@ -220,8 +220,8 @@ body {
 }
 
 .social-icon {
-    width: 65px;
-    height: 65px;
+    width: 44px;
+    height: 44px;
     border-radius: 50%;
     background-color: rgba(100, 255, 218, 0.1);
     display: flex;
@@ -247,7 +247,7 @@ body {
 }
 
 .social-icon i {
-    font-size: 28px;
+    font-size: 20px;
 }
 
 /* Flutter Icon Special Styling */
@@ -264,8 +264,8 @@ body {
 
 /* LinkedIn Icon - keeping it circular like others */
 .linkedin-icon {
-    width: 65px;
-    height: 65px;
+    width: 44px;
+    height: 44px;
     border-radius: 50%;
     padding: 0;
     gap: 0;
@@ -344,21 +344,21 @@ body {
     }
     
     .social-icon {
-        width: 70px;
-        height: 70px;
-        min-width: 70px;
-        min-height: 70px;
+        width: 48px;
+        height: 48px;
+        min-width: 48px;
+        min-height: 48px;
     }
     
     .linkedin-icon {
-        width: 70px;
-        height: 70px;
-        min-width: 70px;
-        min-height: 70px;
+        width: 48px;
+        height: 48px;
+        min-width: 48px;
+        min-height: 48px;
     }
     
     .social-icon i {
-        font-size: 28px;
+        font-size: 22px;
     }
     
     .profile-picture {
@@ -421,21 +421,21 @@ body {
     }
     
     .social-icon {
-        width: 60px;
-        height: 60px;
-        min-width: 60px;
-        min-height: 60px;
+        width: 44px;
+        height: 44px;
+        min-width: 44px;
+        min-height: 44px;
     }
     
     .linkedin-icon {
-        width: 60px;
-        height: 60px;
-        min-width: 60px;
-        min-height: 60px;
+        width: 44px;
+        height: 44px;
+        min-width: 44px;
+        min-height: 44px;
     }
     
     .social-icon i {
-        font-size: 24px;
+        font-size: 20px;
     }
     
     .code-block {
@@ -490,29 +490,29 @@ body {
     }
     
     .social-icon {
-        width: 55px;
-        height: 55px;
-        min-width: 55px;
-        min-height: 55px;
+        width: 40px;
+        height: 40px;
+        min-width: 40px;
+        min-height: 40px;
     }
     
     .linkedin-icon {
-        width: 55px;
-        height: 55px;
-        min-width: 55px;
-        min-height: 55px;
+        width: 40px;
+        height: 40px;
+        min-width: 40px;
+        min-height: 40px;
     }
     
     .social-icon i {
-        font-size: 22px;
+        font-size: 18px;
     }
 }
 
 /* Touch-friendly improvements */
 @media (hover: none) and (pointer: coarse) {
     .social-icon {
-        min-width: 70px;
-        min-height: 70px;
+        min-width: 44px;
+        min-height: 44px;
     }
     
     .social-icon:hover {
