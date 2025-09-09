@@ -11,17 +11,17 @@
 <body>
 
   <!-- Skeleton Loader (iframe) -->
-  <div id="skeleton-loader">
+  <div id="skeleton-loader" class="skeleton-container">
     <iframe 
-  src="skeleton.html" 
-  style="width:100%; height:100vh; border:none; overflow:hidden;" 
-  scrolling="no">
-</iframe>
-
+      src="skeleton.html" 
+      style="width:100%; height:100vh; border:none; overflow:hidden;" 
+      scrolling="no"
+      id="skeleton-iframe">
+    </iframe>
   </div>
 
   <!-- Real Blog Content (hidden initially) -->
-  <div id="real-content" style="display: none;">
+  <div id="real-content" class="real-content" style="display: none;">
     <div class="container">
       <!-- Main Content Column -->
       <main class="main-content">
@@ -167,11 +167,184 @@ Future<void> main() async {
   </div>
 
   <script>
-    // Simulate loading: hide skeleton after 2s and show real blog
-    setTimeout(() => {
-      document.getElementById("skeleton-loader").style.display = "none";
-      document.getElementById("real-content").style.display = "block";
-    }, 2000);
+    // Enhanced loading and transition system
+    class LoadingManager {
+      constructor() {
+        this.skeletonLoader = document.getElementById("skeleton-loader");
+        this.realContent = document.getElementById("real-content");
+        this.skeletonIframe = document.getElementById("skeleton-iframe");
+        this.isLoading = true;
+        this.minLoadingTime = 3000; // Minimum 3 seconds for better UX
+        this.startTime = Date.now();
+        
+        this.init();
+      }
+      
+      init() {
+        // Add CSS transitions
+        this.addTransitionStyles();
+        
+        // Start the loading process
+        this.startLoading();
+      }
+      
+      addTransitionStyles() {
+        const style = document.createElement('style');
+        style.textContent = `
+          .skeleton-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            z-index: 1000;
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+          }
+          
+          .skeleton-container.fade-out {
+            opacity: 0;
+            transform: scale(0.95);
+            pointer-events: none;
+          }
+          
+          .real-content {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-in, transform 0.8s ease-in;
+          }
+          
+          .real-content.fade-in {
+            opacity: 1;
+            transform: translateY(0);
+          }
+          
+          .loading-progress {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(100, 255, 218, 0.1);
+            border: 1px solid rgba(100, 255, 218, 0.3);
+            border-radius: 20px;
+            padding: 8px 16px;
+            color: #64FFDA;
+            font-size: 14px;
+            z-index: 1001;
+            backdrop-filter: blur(10px);
+            transition: opacity 0.3s ease;
+          }
+          
+          .loading-progress.hidden {
+            opacity: 0;
+            pointer-events: none;
+          }
+        `;
+        document.head.appendChild(style);
+      }
+      
+      startLoading() {
+        // Create progress indicator
+        this.createProgressIndicator();
+        
+        // Simulate content loading
+        this.simulateContentLoading();
+      }
+      
+      createProgressIndicator() {
+        this.progressIndicator = document.createElement('div');
+        this.progressIndicator.className = 'loading-progress';
+        this.progressIndicator.innerHTML = 'Loading content...';
+        document.body.appendChild(this.progressIndicator);
+        
+        // Update progress text
+        this.updateProgressText();
+      }
+      
+      updateProgressText() {
+        const messages = [
+          'Loading content...',
+          'Preparing your reading experience...',
+          'Almost ready...',
+          'Final touches...'
+        ];
+        
+        let messageIndex = 0;
+        const interval = setInterval(() => {
+          if (!this.isLoading) {
+            clearInterval(interval);
+            return;
+          }
+          
+          this.progressIndicator.textContent = messages[messageIndex];
+          messageIndex = (messageIndex + 1) % messages.length;
+        }, 800);
+      }
+      
+      simulateContentLoading() {
+        // Simulate various loading phases
+        setTimeout(() => {
+          this.progressIndicator.textContent = 'Preparing your reading experience...';
+        }, 1000);
+        
+        setTimeout(() => {
+          this.progressIndicator.textContent = 'Almost ready...';
+        }, 2000);
+        
+        setTimeout(() => {
+          this.progressIndicator.textContent = 'Final touches...';
+        }, 2500);
+        
+        // Complete loading after minimum time
+        setTimeout(() => {
+          this.completeLoading();
+        }, this.minLoadingTime);
+      }
+      
+      completeLoading() {
+        this.isLoading = false;
+        
+        // Hide progress indicator
+        this.progressIndicator.classList.add('hidden');
+        
+        // Start transition
+        this.startTransition();
+      }
+      
+      startTransition() {
+        // Fade out skeleton
+        this.skeletonLoader.classList.add('fade-out');
+        
+        // Show real content after a short delay
+        setTimeout(() => {
+          this.realContent.style.display = 'block';
+          
+          // Trigger fade-in animation
+          requestAnimationFrame(() => {
+            this.realContent.classList.add('fade-in');
+          });
+          
+          // Remove skeleton completely after transition
+          setTimeout(() => {
+            this.skeletonLoader.style.display = 'none';
+            this.progressIndicator.remove();
+          }, 800);
+        }, 400);
+      }
+    }
+    
+    // Initialize loading manager when DOM is ready
+    document.addEventListener('DOMContentLoaded', () => {
+      new LoadingManager();
+    });
+    
+    // Fallback for immediate execution
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', () => {
+        new LoadingManager();
+      });
+    } else {
+      new LoadingManager();
+    }
   </script>
 </body>
 </html>
