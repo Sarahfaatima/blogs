@@ -1,72 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                    <title>Flutter + Supabase: The Firebase Alternative You Need to Know</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flutter + Supabase: The Firebase Alternative You Need to Know</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
+
+  <!-- Skeleton Loader (iframe) -->
+  <div id="skeleton-loader">
+    <iframe 
+  src="skeleton.html" 
+  style="width:100%; height:100vh; border:none; overflow:hidden;" 
+  scrolling="no">
+</iframe>
+
+  </div>
+
+  <!-- Real Blog Content (hidden initially) -->
+  <div id="real-content" style="display: none;">
     <div class="container">
-        <!-- Main Content Column -->
-        <main class="main-content">
-            <!-- Header Section -->
-            <header class="blog-header">
-                <div class="metadata">
-                    <span class="category">Technology</span>
-                    <span class="read-time">• 5 min read</span>
-                </div>
-                <h1 class="blog-title">Flutter + Supabase: The Firebase Alternative You Need to Know</h1>
-                <p class="author">by Yesra Fatima</p>
-            </header>
+      <!-- Main Content Column -->
+      <main class="main-content">
+        <!-- Header Section -->
+        <header class="blog-header">
+          <div class="metadata">
+            <span class="category">Technology</span>
+            <span class="read-time">• 5 min read</span>
+          </div>
+          <h1 class="blog-title">Flutter + Supabase: The Firebase Alternative You Need to Know</h1>
+          <p class="author">by Yesra Fatima</p>
+        </header>
 
-            <!-- Blog Content -->
-            <article class="blog-content">
-                <p class="intro">
-                    Supabase is an open-source backend-as-a-service (BaaS) platform that helps developers build scalable applications quickly. Supabase include features such as Database, Authentication, Storage, AI & Vectors, Realtime and Edge Functions, check out their official document.
-                </p>
+        <!-- Blog Content -->
+        <article class="blog-content">
+          <p class="intro">
+            Supabase is an open-source backend-as-a-service (BaaS) platform that helps developers build scalable applications quickly. Supabase include features such as Database, Authentication, Storage, AI & Vectors, Realtime and Edge Functions, check out their official document.
+          </p>
 
-                <h2 class="section-title">Why Use Supabase with Flutter?</h2>
-                <p class="section-text">
-                    Well the answer to this question is: Flutter is known for building beautiful, cross-platform apps. But to bring those apps to life with backend functionality like authentication, database storage, and real-time updates, you need a powerful backend — and that's where Supabase shines.
-                </p>
+          <h2 class="section-title">Why Use Supabase with Flutter?</h2>
+          <p class="section-text">
+            Well the answer to this question is: Flutter is known for building beautiful, cross-platform apps. But to bring those apps to life with backend functionality like authentication, database storage, and real-time updates, you need a powerful backend — and that's where Supabase shines.
+          </p>
 
-                <div class="benefits-list">
-                    <ul class="benefits">
-                        <li>Works well for mobile apps</li>
-                        <li>Fully open-source and self-hostable</li>
-                        <li>Offers instant APIs for your database</li>
-                        <li>Great documentation and growing Flutter support</li>
-                        <li>A strong Firebase alternative for devs who prefer SQL or want more control</li>
-                    </ul>
-                </div>
+          <div class="benefits-list">
+            <ul class="benefits">
+              <li>Works well for mobile apps</li>
+              <li>Fully open-source and self-hostable</li>
+              <li>Offers instant APIs for your database</li>
+              <li>Great documentation and growing Flutter support</li>
+              <li>A strong Firebase alternative for devs who prefer SQL or want more control</li>
+            </ul>
+          </div>
 
-                <h2 class="section-title">This is how you can connect Supabase to your Flutter app.</h2>
+          <h2 class="section-title">This is how you can connect Supabase to your Flutter app.</h2>
 
-                <div class="tips-section">
-                    <div class="tip-item">
-                        <h3 class="tip-number">1. Add Supabase Dependencies in your pubspec.yaml file</h3>
-                        <div class="code-block">
-                            <code>supabase_flutter: ^latest_version</code>
-                        </div>
-                    </div>
+          <div class="tips-section">
+            <div class="tip-item">
+              <h3 class="tip-number">1. Add Supabase Dependencies in your pubspec.yaml file</h3>
+              <div class="code-block">
+                <code>supabase_flutter: ^latest_version</code>
+              </div>
+            </div>
 
-                    <div class="tip-item">
-                        <h3 class="tip-number">2. Setup a new Supabase Project</h3>
-                        <p class="tip-text">
-                            Enter your project name and a strong database password and click Create new Project. To create a new project, you need to have an organization, if you don't have one yet, you can create it yourself there. After creating the project, it will take two to three minutes to build the database and the API.
-                        </p>
-                    </div>
+            <div class="tip-item">
+              <h3 class="tip-number">2. Setup a new Supabase Project</h3>
+              <p class="tip-text">
+                Enter your project name and a strong database password and click Create new Project. To create a new project, you need to have an organization, if you don't have one yet, you can create it yourself there. After creating the project, it will take two to three minutes to build the database and the API.
+              </p>
+            </div>
 
-                    <div class="tip-item">
-                        <h3 class="tip-number">3. Initialize the Supabase client</h3>
-                        <p class="tip-text">
-                            Open lib/main.dart and edit the main function to initialize Supabase using your project URL and public API (anon) key:
-                        </p>
-                        <div class="code-block">
-                            <pre><code>import 'package:supabase_flutter/supabase_flutter.dart';
+            <div class="tip-item">
+              <h3 class="tip-number">3. Initialize the Supabase client</h3>
+              <p class="tip-text">
+                Open lib/main.dart and edit the main function to initialize Supabase using your project URL and public API (anon) key:
+              </p>
+              <div class="code-block">
+                <pre><code>import 'package:supabase_flutter/supabase_flutter.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -77,79 +90,88 @@ Future<void> main() async {
   );
   runApp(MyApp());
 }</code></pre>
-                        </div>
-                    </div>
+              </div>
+            </div>
 
-                    <div class="tip-item">
-                        <h3 class="tip-number">4. Auth Examples</h3>
-                        <p class="tip-text">Sign Up:</p>
-                        <div class="code-block">
-                            <pre><code>await Supabase.instance.client.auth.signUp(
+            <div class="tip-item">
+              <h3 class="tip-number">4. Auth Examples</h3>
+              <p class="tip-text">Sign Up:</p>
+              <div class="code-block">
+                <pre><code>await Supabase.instance.client.auth.signUp(
   email: 'test@example.com',
   password: 'yourPassword',
 );</code></pre>
-                        </div>
-                        <p class="tip-text">Sign In:</p>
-                        <div class="code-block">
-                            <pre><code>await Supabase.instance.client.auth.signInWithPassword(
+              </div>
+              <p class="tip-text">Sign In:</p>
+              <div class="code-block">
+                <pre><code>await Supabase.instance.client.auth.signInWithPassword(
   email: 'test@example.com',
   password: 'yourPassword',
 );</code></pre>
-                        </div>
-                    </div>
+              </div>
+            </div>
 
-                    <div class="tip-item">
-                        <h3 class="tip-number">5. Database Operations</h3>
-                        <p class="tip-text">Inserting new records into your Supabase table:</p>
-                        <div class="code-block">
-                            <pre><code>await Supabase.instance.client
+            <div class="tip-item">
+              <h3 class="tip-number">5. Database Operations</h3>
+              <p class="tip-text">Inserting new records into your Supabase table:</p>
+              <div class="code-block">
+                <pre><code>await Supabase.instance.client
   .from('your_table_name')
   .insert({
     'column1': 'value1',
     'column2': 'value2',
     'user_id': Supabase.instance.client.auth.currentUser?.id,
   });</code></pre>
-                        </div>
-                        <p class="tip-text">Deleting records from your Supabase table:</p>
-                        <div class="code-block">
-                            <pre><code>await Supabase.instance.client
+              </div>
+              <p class="tip-text">Deleting records from your Supabase table:</p>
+              <div class="code-block">
+                <pre><code>await Supabase.instance.client
   .from('your_table_name')
   .delete()
   .eq('id', record_id);</code></pre>
-                        </div>
-                    </div>
-                </div>
-
-                <h2 class="section-title">Conclusion</h2>
-                <p class="section-text">
-                    Integrating Supabase with Flutter opens up a world of possibilities for developers looking to build robust, scalable applications. The combination of Flutter's beautiful UI capabilities and Supabase's powerful backend services creates a development experience that's both efficient and powerful. With real-time database updates, built-in authentication, and seamless API generation, Supabase eliminates the need for complex backend infrastructure while providing the flexibility and control that modern applications require. Whether you're building a simple todo app or a complex social platform, the Flutter-Supabase integration offers the perfect balance of development speed and application performance. As the Flutter ecosystem continues to grow and Supabase expands its feature set, this powerful duo is becoming the go-to choice for developers who want to focus on creating exceptional user experiences without getting bogged down by backend complexities.
-                </p>
-            </article>
-        </main>
-
-        <!-- Sidebar Column -->
-        <aside class="sidebar">
-            <!-- Profile Picture -->
-            <div class="profile-section">
-                <div class="profile-picture">
-                    <img src="asset/picture.jpg" alt="Yesra Fatima" class="profile-img">
-                </div>
+              </div>
             </div>
+          </div>
 
-            <!-- Social Icons -->
-            <div class="social-icons">
-                <a href="https://github.com/yesra29" class="social-icon" target="_blank" rel="noopener noreferrer">
-                    <i class="fab fa-github"></i>
-                </a>
+          <h2 class="section-title">Conclusion</h2>
+          <p class="section-text">
+            Integrating Supabase with Flutter opens up a world of possibilities for developers looking to build robust, scalable applications. The combination of Flutter's beautiful UI capabilities and Supabase's powerful backend services creates a development experience that's both efficient and powerful. With real-time database updates, built-in authentication, and seamless API generation, Supabase eliminates the need for complex backend infrastructure while providing the flexibility and control that modern applications require. Whether you're building a simple todo app or a complex social platform, the Flutter-Supabase integration offers the perfect balance of development speed and application performance. As the Flutter ecosystem continues to grow and Supabase expands its feature set, this powerful duo is becoming the go-to choice for developers who want to focus on creating exceptional user experiences without getting bogged down by backend complexities.
+          </p>
+        </article>
+      </main>
 
-                <a href="https://x.com/fyesra0" class="social-icon" target="_blank" rel="noopener noreferrer">
-                    <i class="fab fa-twitter"></i>
-                </a>
-                <a href="https://www.linkedin.com/in/yesra-fatima" class="social-icon linkedin-icon" target="_blank" rel="noopener noreferrer">
-                    <i class="fab fa-linkedin-in"></i>
-                </a>
-            </div>
-        </aside>
+      <!-- Sidebar Column -->
+      <aside class="sidebar">
+        <!-- Profile Picture -->
+        <div class="profile-section">
+          <div class="profile-picture">
+            <img src="asset/picture.jpg" alt="Yesra Fatima" class="profile-img">
+          </div>
+        </div>
+
+        <!-- Social Icons -->
+        <div class="social-icons">
+          <a href="https://github.com/yesra29" class="social-icon" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-github"></i>
+          </a>
+
+          <a href="https://x.com/fyesra0" class="social-icon" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/yesra-fatima" class="social-icon linkedin-icon" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+        </div>
+      </aside>
     </div>
+  </div>
+
+  <script>
+    // Simulate loading: hide skeleton after 2s and show real blog
+    setTimeout(() => {
+      document.getElementById("skeleton-loader").style.display = "none";
+      document.getElementById("real-content").style.display = "block";
+    }, 2000);
+  </script>
 </body>
-</html> 
+</html>
